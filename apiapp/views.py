@@ -49,8 +49,7 @@ def updateRecord(request,pk):
         serializer.save()
     return Response(serializer.data)    
 
-
-@api_view(['DELETE'])
+@api_view(['DELETE', 'GET'])
 def deleteRecord(request,pk):
     task = Task.objects.get(id=pk)
     task.delete()
